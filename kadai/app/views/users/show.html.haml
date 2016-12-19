@@ -1,8 +1,9 @@
 .col-xs-8#users-content
-  .user-info
-    %span.user-name
-      = @user.name
-    %span.user-id
-      @#{@user.name}
-    .bio
-      = @user.bio
+
+  = render partial: "users/header"
+  .list-group
+    - if @user.tweets.empty?
+      .list-group-item
+        まだツイートはありません
+
+    = render partial: "users/tweet", collection: @user.tweets

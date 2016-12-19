@@ -4,6 +4,9 @@
     %p.ex
       このサイトは、海外ドラマが大好きな人が集まる場です。
 
+    - if notice
+	    %p
+	      .alert.alert-info= notice
   .col-xs-6.right-content
     = form_for @user, url: registrations_path, method: :post do |f|
       %h2

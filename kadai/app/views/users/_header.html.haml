@@ -15,8 +15,8 @@
         つぶやき
       .num
         #{@user.tweets.count}
-  %li{ class: action_name == "follows" ? "active" : nil }
-    = link_to follows_user_path(@user) do
+  %li{ class: action_name == "lists" ? "active" : nil }
+    = link_to lists_path(@user) do
       .text
         リスト
       .num

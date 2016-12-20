@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+resources :lists
 resource :registrations, only: [:new, :create]
 resource :sessions, only: [:new, :create, :destroy]
 resource :settings, only: [:edit, :update]

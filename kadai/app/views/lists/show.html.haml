@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @list.title
+%p
+  %b Season:
+  = @list.season
+%p
+  %b Episode:
+  = @list.episode
+
+= link_to '編集', edit_list_path(@list)
+\|
+= link_to '戻る', lists_path

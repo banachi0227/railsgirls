@@ -1,0 +1,24 @@
+%h1 リスト一覧
+
+%table
+  %thead
+    %tr
+      %th タイトル
+      %th シーズン
+      %th エピソード
+      %th
+      %th
+      %th
+
+  %tbody
+    - @lists.each do |list|
+      %tr
+        %td= list.title
+        %td= list.season
+        %td= list.episode
+        %td= link_to '編集', edit_list_path(list)
+        %td= link_to '削除', list, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to '新規登録', new_list_path

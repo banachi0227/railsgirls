@@ -18,6 +18,12 @@
   %li{ class: action_name == "follows" ? "active" : nil }
     = link_to follows_user_path(@user) do
       .text
+        リスト
+      .num
+        #{@user.inverse_followers.count}
+  %li{ class: action_name == "follows" ? "active" : nil }
+    = link_to follows_user_path(@user) do
+      .text
         フォロー
       .num
         #{@user.inverse_followers.count}

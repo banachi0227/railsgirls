@@ -1,1 +1,1 @@
-json.partial! "tweets/tweet", tweet: @tweet
+json.extract! @tweet, :id, :user_id, :content, :created_at, :updated_at

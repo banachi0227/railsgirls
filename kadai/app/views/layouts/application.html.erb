@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kadai</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>海外ドラマファン</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="application">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<div>
+  <%= render partial: "layouts/header" %>
+  <%= yield %>
+</div>
 
-  <body id="application">
-    <div>
-     <%= render partial: "layouts/header" %>
-	   <%= yield %>
-	 </div>
-  </body>
+</body>
 </html>

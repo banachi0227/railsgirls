@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     redirect_to tweets_url if logged_in?
   end
 
-def create
+  def create
     email    = params_user[:email]
     password = params_user[:password]
 
@@ -16,11 +16,10 @@ def create
     end
   end
 
-
   def destroy
     logout
     redirect_to root_url, notice: "サインアウトしました"
-	end
+  end
 
   private
 

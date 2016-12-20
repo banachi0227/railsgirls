@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
   def timeline
     @tweets = Tweet.eager_load(user: :inverse_follows).where(follows: { follower_id: current_user.id })
     @tweet  = Tweet.new
-	end
+  end
 
   # GET /tweets/1
   # GET /tweets/1.json
@@ -22,7 +22,6 @@ class TweetsController < ApplicationController
   # GET /tweets/new
   def new
     @tweet = Tweet.new
-    @tweet.user = current_user
   end
 
   # GET /tweets/1/edit
@@ -33,6 +32,7 @@ class TweetsController < ApplicationController
   # POST /tweets.json
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.user = current_user
 
     respond_to do |format|
       if @tweet.save
